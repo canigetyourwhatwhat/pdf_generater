@@ -7,8 +7,9 @@ It first marshals the input to the struct, generate HTML which will be out gener
 
 
 ## Directory explanation
+- bin: It contains the binary file to generate PDF.
 - examples: It contains the examples of the input XML.
-- models: It contains the struct of the input XML.
+- models: It contains the struct after parsing input XML.
 - services: It contains the business logic to generate HTML and PDF
 
 
@@ -16,7 +17,7 @@ It first marshals the input to the struct, generate HTML which will be out gener
 - Golang version 1.23.2 
 - [weasyprint](https://doc.courtbouillon.org/weasyprint/stable/index.html) library to generate PDF
   - > If you are not using macOS and failed generating PDF (because of cross-compile issue), then install the library from [here](https://doc.courtbouillon.org/weasyprint/stable/first_steps.html).
-  - This package was chosen for the below reason
+  - This library was chosen for the below reason
     - It is quite popular library based on the activity logs in [GitHub](https://github.com/Kozea/WeasyPrint)
     - It is easy to use compared to using [maroto](https://github.com/johnfercher/maroto) library to generate PDF for dynamic content
     - [wkhtmltopdf](https://github.com/SebastiaanKlippert/go-wkhtmltopdf) was considered, but it is no longer maintained
@@ -24,7 +25,7 @@ It first marshals the input to the struct, generate HTML which will be out gener
 
 ## How to run
 1. Fulfill all the requirements above
-2. place the XML file in the root directory with the name of `input.xml`.
+2. Place the XML file in the root directory with the name of `input.xml`.
 3. Run the command below
     ```shell
     go run main.go
